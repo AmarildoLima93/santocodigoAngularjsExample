@@ -1,0 +1,38 @@
+<html ng-app=myList>
+	<head>
+		<title>Lista de compras</title>
+		<script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+		<script src="/assets/js/myList.js"></script>
+		<style type="text/css">
+			table,thead,tr,th,tbody,tr,td{border:1px solid #ccc;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="listController">
+			<form class="form-inline" name="formItem">
+				<label>Produto</label><input type=text ng-model="item.product">
+				<label>Preço</label><input type=number step="any" ng-model="item.unitPrice">
+				<label>Quantidade</label><input type=number ng-model="item.qtdade">
+				<button ng-click="addProduct()">Adicionar produto</button>
+			</form>
+			<table>
+				<thead>
+				<tr>
+					<th>Produto</th>
+					<th>Quantidade</th>
+					<th>Preço Unitário</th>
+					<th>Remover</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="item in itens">
+					<td><strong></strong></td>
+ 					<td></td>
+ 					<td></td>
+ 					<td><a ng-click="delProduct($index)">X</a></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
